@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:13:40 by abastard          #+#    #+#             */
-/*   Updated: 2024/05/29 11:31:59 by abastard         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:52:07 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ int ft_printf(char const *str, ...)
 void    ft_format(va_list va, char *str, size_t *counter)
 {
     if (*str =='c') //character
-        ft_character(va_arg(va, int), counter)
+        ft_character_pf(va_arg(va, int), counter)
     else if (*str =='s') //string
-        ft_
+        ft_string_pf(va_arg(va, char *), counter)
     else if (*str =='p') //puntero
-        ft_
+        ft_pointer_pf(va_arg(va, void *), counter)
     else if (*str =='i' || *str =='d') //numero
-        ft_
+        ft_putnbr_pf(va_arg(va, int), counter)
     else if (*str =='u') //size_t
-        ft_
+        ft_putint_pf(va_arg(va, unsigned int), counter)
     else if (*str =='x') // char to in
-        ft_
+        ft_hex_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE)
     else if (*str =='%') // %
-        ft_
+        ft_character_pf(*str, counter);
 }
