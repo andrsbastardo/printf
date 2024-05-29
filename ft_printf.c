@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:13:40 by abastard          #+#    #+#             */
-/*   Updated: 2024/05/11 16:41:42 by abastard         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:31:59 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int ft_printf(char const *str, ...)
         if (*str == '%')
         {
             str++;
-            ft_ (va, (char *)str, &counter);
+            ft_format (va, (char *)str, &counter);
         }
         else
             ft_putcharf(*str,&counter);
@@ -37,7 +37,7 @@ int ft_printf(char const *str, ...)
 void    ft_format(va_list va, char *str, size_t *counter)
 {
     if (*str =='c') //character
-        ft_
+        ft_character(va_arg(va, int), counter)
     else if (*str =='s') //string
         ft_
     else if (*str =='p') //puntero
