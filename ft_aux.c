@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 12:46:31 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/04 14:38:45 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:16:02 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,42 @@
 
 size_t	ft_strlen_pf(const char *str)
 {
-	size_t	c;
+	size_t	i;
 
-	if (!str)
-		return (0);
-	c = 0;
-	while (str[c])
-		c++;
-	return (c);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 
 void	ft_bzero_pf(void *s, size_t n)
 {
-	unsigned char	*ptr;
+	size_t			i;
+	unsigned char	*str;
 
-	ptr = (unsigned char *)s;
-	while (n > 0)
+	i = 0;
+	str = (unsigned char *)s;
+	while (i < n)
 	{
-		*ptr = 0;
-		ptr++;
-		n--;
+		str[i] = 0;
+		i++;
 	}
 }
 
 void	*ft_calloc_pf(size_t number, size_t size)
 {
-	void	*dest;
+	int	*ptr;
 
-	dest = malloc (number * size);
-	if (dest == NULL)
+	if (nmemb >= SIZE_MAX || size >= SIZE_MAX || (nmemb * size) > SIZE_MAX)
 		return (NULL);
-	ft_bzero_pf(dest, number * size);
-	return (dest);
+	ptr = (int *)malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }
 
-static size_t	ft_len(unsigned long long n, char *base)
+static size_t	ft_long(unsigned long long n, char *base)
 {
 	size_t				len;
 	unsigned long long	base_len;
@@ -63,13 +64,13 @@ static size_t	ft_len(unsigned long long n, char *base)
 	return (len);
 }
 
-char	*ft_aux_pf(unsigned long long n, char *base)
+char	*ft_address_pf(unsigned long long n, char *base)
 {
 	char	*str;
 	int		num_len;
 	int		base_len;
 
-	num_len = ft_len(n, base);
+	num_len = ft_long(n, base);
 	base_len = ft_strlen_pf(base);
 	str = ft_calloc_pf((num_len + 1), sizeof(char));
 	if (!str)

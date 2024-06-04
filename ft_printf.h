@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:15:18 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/04 14:27:34 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:16:31 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ void	ft_puthex_pf(unsigned int num, size_t *counter, char *base);
 void	ft_pointer_pf(void *ptr, size_t *counter);
 
 /* auxiliary functions */
-char	*ft_aux_pf(unsigned long long n, char *base);
+char	*ft_address_pf(unsigned long long n, char *base);
 
 #endif

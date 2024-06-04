@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:13:40 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/04 14:30:28 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:19:06 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,4 @@ int ft_printf(char const *str, ...)
     }
     va_end(va);
     return (counter);
-}
-
-int main(void)
-{
-    char    *str;
-    char    *str2;
-
-    str2 = "Hola";
-    str = "%s Mundo";
-    ft_printf(str, str2);
 }
