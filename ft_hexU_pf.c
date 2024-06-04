@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hex_pf.c                                        :+:      :+:    :+:   */
+/*   ft_hexU_pf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 14:25:53 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/04 16:34:52 by abastard         ###   ########.fr       */
+/*   Created: 2024/06/04 16:35:27 by abastard          #+#    #+#             */
+/*   Updated: 2024/06/04 16:35:35 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-ft_hexL_pf(unsigned int num, size_t *counter, char *base)
+ft_hexU_pf(unsigned int num, size_t *counter, char *base)
 {
     {
 	char	*str;

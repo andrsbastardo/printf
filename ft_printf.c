@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:13:40 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/04 15:19:06 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:40:13 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,16 @@ void    ft_format(va_list va, char *str, size_t *counter)
         ft_string_pf(va_arg(va, char *), counter);
     else if (*str =='p') //puntero
         ft_pointer_pf(va_arg(va, void *), counter);
-    else if (*str =='i' || *str =='d') //numero
+    else if (*str =='i' || *str =='d') //numero entero
         ft_putnbr_pf(va_arg(va, int), counter);
+    else if (*str =='d' || *str =='d') //numero decimal
+        ft_putdec_pf(va_arg(va, int), counter);
     else if (*str =='u') //size_t
         ft_putint_pf(va_arg(va, unsigned int), counter);
-    // else if (*str =='x') // char to in
-    //     ft_hex_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
+    else if (*str =='x') // char to in
+         ft_hexL_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
+    else if (*str =='X') // char to in
+         ft_hexU_pf(va_arg(va, unsigned int), counter, HEX_UP_BASE);
     else if (*str =='%') // %
         ft_character_pf(*str, counter);
 }

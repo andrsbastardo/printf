@@ -6,13 +6,13 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:19:37 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/04 15:36:29 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:47:40 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	*excepts(int n)
+static char	*excepts(int n) // No lo mande a strdup. acumulalo en una str y encontes, ejecutas a ft_character
 {
 	if (n == INT_MIN)
 		return (ft_strdup("-2147483648"));
@@ -45,7 +45,7 @@ static int	n_digits(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int n) //No retornes res, mandalo a ft_string_pf además ha de funcionar con size_t
 {
 	char	*res;
 	int		len;
@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 		return (excepts(n));
 	cpy = n;
 	len = n_digits(n);
-	res = ft_calloc_pf(sizeof(char), len + 1);
+	res = ft_calloc_pf(sizeof(char), len + 1); // A lo mejor no hace falta que aloquemos memoria aqui.
 	if (!res)
 		return (NULL);
 	if (n < 0)
