@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:15:18 by abastard          #+#    #+#             */
-/*   Updated: 2024/05/29 12:50:20 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:27:34 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_printf(char const *str, ...);
 void	ft_character_pf(char c, size_t *counter);
 void	ft_string_pf(char *str, size_t *counter);
 void	ft_putnbr_pf(int num, size_t *counter);
-void	ft_putuint_pf(unsigned int num, size_t *counter);
+void	ft_putint_pf(unsigned int num, size_t *counter);
 void	ft_puthex_pf(unsigned int num, size_t *counter, char *base);
 void	ft_pointer_pf(void *ptr, size_t *counter);
 

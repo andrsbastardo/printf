@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   ft_character_pf.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 11:42:11 by abastard          #+#    #+#             */
-/*   Updated: 2024/05/29 11:44:27 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:29:34 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- char   ft_putchar_pf(char c,size_t *counter)
+#include "ft_printf.h"
+
+ void   ft_putchar_pf(char c,size_t *counter)
  {
     write(1, &c, 1);
-    (counter)++;
+    (*counter)++;
  }

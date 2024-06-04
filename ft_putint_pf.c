@@ -1,24 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_string_pf.c                                     :+:      :+:    :+:   */
+/*   ft_putinf_pf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 11:55:49 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/04 14:33:52 by abastard         ###   ########.fr       */
+/*   Created: 2024/06/04 14:19:37 by abastard          #+#    #+#             */
+/*   Updated: 2024/06/04 14:27:03 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_string_pf(char * str, size_t *counter)
-{
-    if(!str)
-        str = "(nill)";
-    while(*str)
-    {
-        ft_character_pf(*str, counter)
-        str++;
-    }   
-}
+ft_putint_pf(va_arg(va, unsigned int), counter)

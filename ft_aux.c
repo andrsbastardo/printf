@@ -6,9 +6,11 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 12:46:31 by abastard          #+#    #+#             */
-/*   Updated: 2024/05/29 13:20:12 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:38:45 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 size_t	ft_strlen_pf(const char *str)
 {
@@ -67,12 +69,12 @@ char	*ft_aux_pf(unsigned long long n, char *base)
 	int		num_len;
 	int		base_len;
 
-	num_len = ft_len(n, base); // llamamos a ft_len para calcular la longuitud del puntero si este fuera numerico
-	base_len = ft_strlen_pf(base);// calculamos la longuitud de str si esta fueran cha
-	str = ft_calloc_pf((num_len + 1), sizeof(char)); //Alocamos la memoria neccesaria
-	if (!str) //Por si acaso
+	num_len = ft_len(n, base);
+	base_len = ft_strlen_pf(base);
+	str = ft_calloc_pf((num_len + 1), sizeof(char));
+	if (!str)
 		return (NULL);
-	while (num_len) //retorna la str al reves, del final al principio.
+	while (num_len)
 	{
 		num_len = num_len - 1;
 		str[num_len] = base[n % base_len];
