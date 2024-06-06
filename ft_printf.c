@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:13:40 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/04 16:40:13 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/06 13:01:16 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void    ft_format(va_list va, char *str, size_t *counter)
         ft_pointer_pf(va_arg(va, void *), counter);
     else if (*str =='i' || *str =='d') //numero entero
         ft_putnbr_pf(va_arg(va, int), counter);
-    else if (*str =='d' || *str =='d') //numero decimal
-        ft_putdec_pf(va_arg(va, int), counter);
     else if (*str =='u') //size_t
         ft_putint_pf(va_arg(va, unsigned int), counter);
     else if (*str =='x') // char to in

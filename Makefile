@@ -6,13 +6,13 @@
 #    By: abastard <abastard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/29 11:17:38 by abastard          #+#    #+#              #
-#    Updated: 2024/06/04 14:14:29 by abastard         ###   ########.fr        #
+#    Updated: 2024/06/06 12:53:17 by abastard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprinttf.a
 
-SRC =	ft_printf.c	ft_character_pf.c ft_pointer_pf.c ft_string_pf.c ft_aux.c
+SRC =	ft_aux.c ft_character_pf.c ft_hexL_pf.c ft_hexU_pf.c ft_pointer_pf.c ft_printf.c ft_putdec_pf.c ft_putint_pf.c ft_string_pf.c
 
 OBJS = $(SRC:.c=.o)
 

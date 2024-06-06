@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 12:46:31 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/04 15:16:02 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/06 14:05:41 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,13 @@ void	ft_bzero_pf(void *s, size_t n)
 
 void	*ft_calloc_pf(size_t number, size_t size)
 {
-	int	*ptr;
+	void	*dest;
 
-	if (nmemb >= SIZE_MAX || size >= SIZE_MAX || (nmemb * size) > SIZE_MAX)
+	dest = malloc (number * size);
+	if (dest == NULL)
 		return (NULL);
-	ptr = (int *)malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	ft_bzero_pf(dest, number * size);
+	return (dest);
 }
 
 static size_t	ft_long(unsigned long long n, char *base)
@@ -67,18 +65,18 @@ static size_t	ft_long(unsigned long long n, char *base)
 char	*ft_address_pf(unsigned long long n, char *base)
 {
 	char	*str;
-	int		num_len;
+	int		loop;
 	int		base_len;
 
-	num_len = ft_long(n, base);
+	loop = ft_long(n, base);
 	base_len = ft_strlen_pf(base);
-	str = ft_calloc_pf((num_len + 1), sizeof(char));
+	str = ft_calloc_pf((loop + 1), sizeof(char));
 	if (!str)
 		return (NULL);
-	while (num_len)
+	while (loop)
 	{
-		num_len = num_len - 1;
-		str[num_len] = base[n % base_len];
+		loop = loop - 1;
+		str[loop] = base[n % base_len];
 		n /= base_len;
 	}
 	return (str);
