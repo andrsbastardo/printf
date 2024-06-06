@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:15:18 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/06 14:09:21 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:48:38 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include <stdint.h>
+# include <stdint.h>
 
 # define HEX_UP_BASE "0123456789ABCDEF"
 # define HEX_LOW_BASE "0123456789abcdef"
@@ -28,8 +28,8 @@ void	ft_character_pf(char c, size_t *counter);
 void	ft_string_pf(char *str, size_t *counter);
 void	ft_putnbr_pf(int num, size_t *counter);
 void	ft_putint_pf(unsigned int num, size_t *counter);
-void	ft_hexL_pf(unsigned int num, size_t *counter, char *base);
-void	ft_hexU_pf(unsigned int num, size_t *counter, char *base);
+void	ft_hexl_pf(unsigned int num, size_t *counter, char *base);
+void	ft_hexu_pf(unsigned int num, size_t *counter, char *base);
 void	ft_pointer_pf(void *ptr, size_t *counter);
 
 /* auxiliary functions */

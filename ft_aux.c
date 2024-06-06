@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 12:46:31 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/06 14:05:41 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:41:02 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,17 @@ void	ft_bzero_pf(void *s, size_t n)
 	}
 }
 
-void	*ft_calloc_pf(size_t number, size_t size)
+void	*ft_calloc_pf(size_t nmemb, size_t size)
 {
-	void	*dest;
+	int	*ptr;
 
-	dest = malloc (number * size);
-	if (dest == NULL)
+	if (nmemb >= SIZE_MAX || size >= SIZE_MAX || (nmemb * size) > SIZE_MAX)
 		return (NULL);
-	ft_bzero_pf(dest, number * size);
-	return (dest);
+	ptr = (int *)malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero_pf(ptr, nmemb * size);
+	return (ptr);
 }
 
 static size_t	ft_long(unsigned long long n, char *base)
@@ -75,9 +77,61 @@ char	*ft_address_pf(unsigned long long n, char *base)
 		return (NULL);
 	while (loop)
 	{
-		loop = loop - 1;
+		loop -= 1;
 		str[loop] = base[n % base_len];
 		n /= base_len;
 	}
 	return (str);
 }
+
+/* 
+ft_address usa el mismo 
+procedimiento que para pasar un numero de decimal a binario.
+Transformación de n = 100 a decimal
+base 01
+len 2
+n = 100
+100 / 2 = 50
+50 / 2 = 25
+25 / 2 = 12
+12 / 2 = 6
+6 /2 = 3
+3 = 2 = 1
+loops = 6 + 1
+
+100 / 2 = 50 resto 0 
+base[0] = 0
+50 / 2 = 25 resto 0
+base[0] = 0
+25 / 2 = 12 resto 1
+base [1] = 0
+12 / 2 = 6 resto 0
+base[0] = 0
+6 / 2 = 3 resto 0
+base[0] = 0
+3 / 2 = 1 resto 1
+base[1] = 1
+1 / 2 = 1
+base[1] = 1
+
+Escribimos del final al principio. -> 1100100
+Resultado 1100100
+Esperado 1100100
+*/
+
+/*
+Transformación de 16 a decimal(0123456789)
+base DECIMAL --> len 10
+loop = 1
+siempre que n >= 16
+16/10=1
+loop = 2
+
+16/10 = 1 resto 6
+base[6] = 6
+1/10 = 1 resto 0
+base[1] = 1
+
+Resultado = 16
+Esperado = 16
+ */

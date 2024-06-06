@@ -6,52 +6,52 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:13:40 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/06 13:01:16 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:49:19 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_format(va_list va, char *str, size_t *counter)
+void	ft_format(va_list va, char *str, size_t *counter)
 {
-    if (*str =='c') //character
-        ft_character_pf(va_arg(va, int), counter);
-    else if (*str =='s') //string
-        ft_string_pf(va_arg(va, char *), counter);
-    else if (*str =='p') //puntero
-        ft_pointer_pf(va_arg(va, void *), counter);
-    else if (*str =='i' || *str =='d') //numero entero
-        ft_putnbr_pf(va_arg(va, int), counter);
-    else if (*str =='u') //size_t
-        ft_putint_pf(va_arg(va, unsigned int), counter);
-    else if (*str =='x') // char to in
-         ft_hexL_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
-    else if (*str =='X') // char to in
-         ft_hexU_pf(va_arg(va, unsigned int), counter, HEX_UP_BASE);
-    else if (*str =='%') // %
-        ft_character_pf(*str, counter);
+	if (*str == 'c')
+		ft_character_pf(va_arg(va, int), counter);
+	else if (*str == 's')
+		ft_string_pf(va_arg(va, char *), counter);
+	else if (*str == 'p')
+		ft_pointer_pf(va_arg(va, void *), counter);
+	else if (*str == 'i' || *str == 'd')
+		ft_putnbr_pf(va_arg(va, int), counter);
+	else if (*str == 'u')
+		ft_putint_pf(va_arg(va, unsigned int), counter);
+	else if (*str == 'x')
+		ft_hexl_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
+	else if (*str == 'X')
+		ft_hexu_pf(va_arg(va, unsigned int), counter, HEX_UP_BASE);
+	else if (*str == '%')
+		ft_character_pf(*str, counter);
 }
 
-int ft_printf(char const *str, ...)
+int	ft_printf(char const *str, ...)
 {
-    va_list va;
-    size_t counter;
-    
-    if (!str)
-        return (0);
-    counter = 0;
-    va_start(va, str);
-    while (*str)
-    {
-        if (*str == '%')
-        {
-            str++;
-            ft_format (va, (char *)str, &counter);
-        }
-        else
-            ft_character_pf(*str,&counter);
-        str++;
-    }
-    va_end(va);
-    return (counter);
+	va_list	va;
+	size_t	counter;
+
+	if (!str)
+		return (0);
+	counter = 0;
+	va_start(va, str);
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			str++;
+			ft_format(va, (char *)str, &counter);
+		}
+		else
+			ft_character_pf(*str, &counter);
+		str++;
+	}
+	va_end(va);
+	return (counter);
 }
