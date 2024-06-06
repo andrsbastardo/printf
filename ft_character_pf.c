@@ -6,13 +6,13 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 11:42:11 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/06 15:48:19 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/06 16:15:40 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_pf(char c, size_t *counter)
+void	ft_character_pf(char c, size_t *counter)
 {
 	write(1, &c, 1);
 	(*counter)++;
