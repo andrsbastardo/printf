@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:13:40 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/06 16:41:17 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/11 11:47:32 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	ft_format(va_list va, char *str, size_t *counter)
 	else if (*str == 'u')
 		ft_putint_pf(va_arg(va, unsigned int), counter);
 	else if (*str == 'x')
-		ft_hexl_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
+		ft_hex_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
 	else if (*str == 'X')
-		ft_hexu_pf(va_arg(va, unsigned int), counter, HEX_UP_BASE);
+		ft_hex_pf(va_arg(va, unsigned int), counter, HEX_UP_BASE);
 	else if (*str == '%')
 		ft_character_pf(*str, counter);
 }

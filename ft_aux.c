@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 12:46:31 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/06 15:41:02 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/11 11:38:02 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	*ft_calloc_pf(size_t nmemb, size_t size)
 	return (ptr);
 }
 
-static size_t	ft_long(unsigned long long n, char *base)
+static size_t	ft_loops(unsigned long long n, char *base)
 {
 	size_t				len;
 	unsigned long long	base_len;
@@ -64,13 +64,13 @@ static size_t	ft_long(unsigned long long n, char *base)
 	return (len);
 }
 
-char	*ft_address_pf(unsigned long long n, char *base)
+char	*ft_changer_pf(unsigned long long n, char *base)
 {
 	char	*str;
 	int		loop;
 	int		base_len;
 
-	loop = ft_long(n, base);
+	loop = ft_loops(n, base);
 	base_len = ft_strlen_pf(base);
 	str = ft_calloc_pf((loop + 1), sizeof(char));
 	if (!str)

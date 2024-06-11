@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:19:37 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/06 15:47:00 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/11 11:42:25 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putint_pf(unsigned int n, size_t *counter)
 {
 	char	*str;
 
-	str = ft_address_pf(n, DECIMAL);
+	str = ft_changer_pf(n, DECIMAL);
 	ft_string_pf(str, counter);
 	free(str);
 }
