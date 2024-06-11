@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:13:40 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/11 11:47:32 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:57:53 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	ft_format(va_list va, char *str, size_t *counter)
 		ft_hex_pf(va_arg(va, unsigned int), counter, HEX_UP_BASE);
 	else if (*str == '%')
 		ft_character_pf(*str, counter);
+	else
+		return;
 }
 
 int	ft_printf(char const *str, ...)
@@ -64,19 +66,16 @@ int	ft_printf(char const *str, ...)
 	int		hex;
 
 	c = 'a';
-	n = -19621;
-	b = "cspdiuxX";
+	n = 0;
+	b = NULL;
 	hex = 95;
-	ft_printf(" Hola esto es una %c\n 
-	Esto es un %d\n Imprime la string %s\n
-	 Cuya dirección de puntero es %p\n", c, n, b, b);
-	printf (" Letra esperada %c\n Digito esperado %d\n string esperada %s\n
-	 Dirección esperada %p\n\n", c, n, b, b);
+	ft_printf(" Hola esto es una %c%c\n Esto es un %d\n  Imprime la string %s\n Cuya dirección de puntero es %p\n", c,c, n, b, b);
+	printf (" Letra esperada %c%c\n Digito esperado %d\n string esperada %s\n Dirección esperada %p\n\n", c,c, n, b, b);
 	ft_printf(" Imprimimos el número como unsigned %u\n", n);
 	printf(" Numero unsigned esperado %u\n\n", n);
-	ft_printf(" Imprimimos el número 16 como hexadecimal.
-	 Numero esperado 5f. Numero recibido %x\n", hex);
-	ft_printf(" Imprimimos el número 16 como hexadecimal.
-	 Numero esperado 5F. Numero recibido %X\n", hex);
-	printf("Resultados hexadecimales esperados %x, %X\n\n", hex, hex);
-} */
+	ft_printf(" Imprimimos el número 16 como hexadecimal. Numero recibido %x \n", hex);
+	ft_printf(" Imprimimos el número 16 como hexadecimal. Numero recibido %X \n", hex);
+	printf(" Resultados hexadecimales esperados %x, %X\n\n", hex, hex);
+	printf("%d\n",ft_printf("La longuitud de la string es\n"));
+	printf("%d\n",printf("La longuitud de la string es\n"));
+}  */
