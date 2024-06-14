@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:15:18 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/11 15:54:55 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/14 12:47:55 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <stdio.h>
+# include <limits.h>
 
 # define HEX_UP_BASE "0123456789ABCDEF"
 # define HEX_LOW_BASE "0123456789abcdef"

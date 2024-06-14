@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:13:40 by abastard          #+#    #+#             */
-/*   Updated: 2024/06/14 11:31:45 by abastard         ###   ########.fr       */
+/*   Updated: 2024/06/14 12:42:40 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,29 +57,3 @@ int	ft_printf(char const *str, ...)
 	va_end(va);
 	return (counter);
 }
-
-/* int	main()
-{
-	char	c;
-	int		n;
-	char 	*b;
-	int		hex;
-
-	c = 'a';
-	n = 0;
-	b = NULL;
-	hex = 95;
-	ft_printf(" Hola esto es una %c%c\n  Esto es un %d\n
-	  Imprime la string %s\n Cuya dirección de puntero es %p\n", c,c, n, b, b);
-	printf (" Letra esperada %c%c\n Digito esperado %d\n
-	 string esperada %s\n Dirección esperada %p\n\n", c,c, n, b, b);
-	ft_printf(" Imprimimos el número como unsigned %u\n", n);
-	printf(" Numero unsigned esperado %u\n\n", n);
-	ft_printf(" Imprimimos el número 16 como hexadecimal.
-	 Numero recibido %x \n", hex);
-	ft_printf(" Imprimimos el número 16 como hexadecimal.
-	 Numero recibido %X \n", hex);
-	printf(" Resultados hexadecimales esperados %x, %X\n\n", hex, hex);
-	printf("%d\n",ft_printf("La longuitud de la string es\n"));
-	printf("%d\n",printf("La longuitud de la string es\n"));
-}  */

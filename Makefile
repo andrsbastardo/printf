@@ -6,7 +6,7 @@
 #    By: abastard <abastard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/29 11:17:38 by abastard          #+#    #+#              #
-#    Updated: 2024/06/11 15:49:38 by abastard         ###   ########.fr        #
+#    Updated: 2024/06/14 12:45:47 by abastard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,14 @@ AR = ar crs
 $(NAME): $(OBJS)
 		$(AR) $(NAME) $(OBJS)
 
+main: all
+		$(CC) main.c $(NAME) -o main.out
+
+run: re main clean
+		./main.out
+		$(RM) main.out
+		
+
 all: $(NAME)
 
 clean:
@@ -31,7 +39,8 @@ clean:
 
 fclean: clean
 		$(RM) $(NAME)
+		$(RM) main.out
 
 re: 	fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re main run
